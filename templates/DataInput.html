@@ -1,98 +1,188 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Gender Prediction</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			background-color: #f2f2f2;
-			margin: 0;
-			padding: 0;
-		}
-		h1 {
-			color: #333;
-			text-align: center;
-			margin: 40px 0;
-		}
-		form {
-			background-color: #fff;
-			border-radius: 5px;
-			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-			margin: 0 auto;
-			padding: 40px;
-			width: 600px;
-		}
-		label {
-			display: block;
-			font-size: 16px;
-			font-weight: bold;
-			margin-bottom: 10px;
-		}
-		input[type="text"] {
-			width: 100%;
-			padding: 10px;
-			border: 1px solid #ccc;
-			border-radius: 4px;
-			margin-bottom: 20px;
-			font-size: 16px;
-		}
-		input[type="submit"] {
-			background-color: #4CAF50;
-			border: none;
-			color: white;
-			padding: 12px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 16px;
-			border-radius: 4px;
-			cursor: pointer;
-			margin-top: 20px;
-			margin-right: 10px;
-			float: right;
-		}
-		a.button {
-			background-color: #ccc;
-			border: none;
-			color: white;
-			padding: 12px 20px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 16px;
-			border-radius: 4px;
-			cursor: pointer;
-			margin-top: 20px;
-			margin-left: 10px;
-			float: right;
-		}
-	</style>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Panic Predictor</title>
+		<style>
+			body {
+				font-family: 'Arial', sans-serif;
+				background-color: #f4f4f4;
+				margin: 0;
+				padding: 0;
+			}
+	
+			h1 {
+				color: #333;
+				text-align: center;
+			}
+	
+			form {
+				max-width: 400px;
+				margin: 0 auto;
+				background-color: #fff;
+				padding: 20px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+				border-radius: 8px;
+			}
+	
+			label {
+				display: block;
+				margin-bottom: 8px;
+			}
+	
+			input, select {
+				width: 100%;
+				padding: 8px;
+				margin-bottom: 16px;
+				box-sizing: border-box;
+			}
+	
+			input[type="submit"] {
+				background-color: #4caf50;
+				color: #fff;
+				cursor: pointer;
+			}
+	
+			input[type="submit"]:hover {
+				background-color: #45a049;
+			}
+	
+			.button {
+				display: inline-block;
+				background-color: #008CBA;
+				color: #fff;
+				padding: 10px 20px;
+				text-decoration: none;
+				border-radius: 5px;
+				margin-top: 10px;
+			}
+	
+			.button:hover {
+				background-color: #005680;
+			}
+	
+			footer {
+				text-align: center;
+				margin-top: 20px;
+				padding-top: 10px;
+			}
+	
+			footer p {
+				margin: 0;
+			}
+		</style>
+	</head>
 <body>
-	<h1>Gender Prediction Form</h1>
+	<h1>Panic Prediction Form</h1>
 	<form method="POST" action="/pred">
-		<label for="age">Age:</label>
-		<input type="text" name="age" required>
-		<label for="height">Height (cm):</label>
-		<input type="text" name="height" required>
-		<label for="weight">Weight (kg):</label>
-		<input type="text" name="weight" required>
-		<label for="occupation">Occupation:</label>
-		<input type="text" name="occupation" required>
-		<label for="education">Education Level:</label>
-		<input type="text" name="education" required>
-		<label for="marital">Marital Status:</label>
-		<input type="text" name="marital" required>
-		<label for="income">Income (USD):</label>
-		<input type="text" name="income" required>
-		<label for="color">Favorite Color:</label>
-		<input type="text" name="color" required>
+		<label for="Age">Age:</label>
+		<input type="text" name="Age" value="23" required>
+
+		<label for="Gender">Gender:</label>
+		<select name="Gender" required>
+				<option value="Male">Male</option>
+				<option value="Female">Female</option>
+		</select>
+
+		<label for="Family History">Family History:</label>
+		<select name="Family History" required>
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+		</select>
+
+		<label for="Personal History">Personal History:</label>
+		<select name="Personal History" required>
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+		</select>
+
+		<label for="Current Stressors">Current Stressors:</label>
+		<select name="Current Stressors" required>
+				<option value="Moderate">Moderate</option>
+				<option value="High">High</option>
+				<option value="Low">Low</option>
+		</select>
+
+		<label for="Symptoms">Symptoms:</label>
+		<select name="Symptoms" required>
+				<option value="Shortness of breath">Shortness of breath</option>
+				<option value="Panic attacks">Panic attacks</option>
+				<option value="Chest pain">Chest pain</option>
+				<option value="Dizziness">Dizziness</option>
+				<option value="Fear of losing control">Fear of losing control</option>
+		</select>
+
+		<label for="Severity">Severity:</label>
+		<select name="Severity" required>
+				<option value="Mild">Mild</option>
+				<option value="Moderate">Moderate</option>
+				<option value="Severe">Severe</option>
+		</select>
+		
+		<label for="Impact on Life">Impact on Life:</label>
+		<select name="Impact on Life" required>
+				<option value="Mild">Mild</option>
+				<option value="Significant">Significant</option>
+				<option value="Moderate">Moderate</option>
+		</select>
+		
+		<label for="Demographics">Demographics:</label>
+		<select name="Demographics" required>
+				<option value="Rural">Rural</option>
+				<option value="Urban">Urban</option>
+		</select>
+		
+		<label for="Medical History">Medical History:</label>
+		<select name="Medical History" required>
+				<option value="Diabetes">Diabetes</option>
+				<option value="Asthma">Asthma</option>
+				<option value="None">None</option>
+				<option value="Heart disease">Heart disease</option>
+		</select>
+
+		<label for="Psychiatric History">Psychiatric History:</label>
+		<select name="Psychiatric History" required>
+				<option value="Bipolar disorder">Bipolar disorder</option>
+				<option value="Anxiety disorder">Anxiety disorder</option>
+				<option value="Depressive disorder">Depressive disorder</option>
+				<option value="None">None</option>
+		</select>
+		
+		<label for="Substance Use">Substance Use:</label>
+		<select name="Substance Use" required>
+				<option value="None">None</option>
+				<option value="Drugs">Drugs</option>
+				<option value="Alcohol">Alcohol</option>
+		</select>
+		
+		<label for="Coping Mechanisms">Coping Mechanisms:</label>
+		<select name="Coping Mechanisms" required>
+				<option value="Socializing">Socializing</option>
+				<option value="Exercise">Exercise</option>
+				<option value="Seeking therapy">Seeking therapy</option>
+				<option value="Meditation">Meditation</option>
+		</select>
+
+		<label for="Social Support">Social Support:</label>
+		<select name="Social Support" required>
+				<option value="High">High</option>
+				<option value="Moderate">Moderate</option>
+				<option value="Low">Low</option>
+		</select>
+
+		<label for="Lifestyle Factors">Lifestyle Factors:</label>
+		<select name="Lifestyle Factors" required>
+				<option value="Sleep quality">Sleep quality</option>
+				<option value="Exercise">Exercise</option>
+				<option value="Diet">Diet</option>
+		</select>
 		<input type="submit" value="Submit">
 		<a class="button" href="/">Back</a>
 	</form>
     <footer style="text-align:center">
 		<hr>
-		<p>This project is hosted on <a href="https://github.com/darkway-s/GenderPridiction">Github</a></p>
+		<p>This project is hosted on <a href="https://github.com/darkway-s/PanicPredictor">Github</a></p>
 	</footer>
 </body>
 </html>
